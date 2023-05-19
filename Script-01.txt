@@ -1,0 +1,23 @@
+CREATE DATABASE salario;
+
+USE salario;
+
+CREATE TABLE Funcionarios(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    cargo VARCHAR(100),
+    salario_atual FLOAT,
+    salario_anterior FLOAT
+);
+
+INSERT INTO funcionarios(nome, cargo, salario_atual, salario_anterior) VALUES ('Maria Aparecida', 'Copeira', 1000.00, 988.00);
+
+INSERT INTO funcionarios(nome, cargo, salario_atual, salario_anterior) VALUES ('Jose Benedito', 'Porteiro', 1250.00, 1117.00);
+
+INSERT INTO funcionarios(nome, cargo, salario_atual, salario_anterior) VALUES ('Joao Pedro', 'Analista', 1754.00, 1500.00);
+
+INSERT INTO funcionarios(nome, cargo, salario_atual, salario_anterior) VALUES ('Joaquina Maria', 'Diretor', 3400.00, 3000.00);
+
+INSERT INTO funcionarios(nome, cargo, salario_atual, salario_anterior) VALUES ('Ana Rosa', 'Operador', 2100.00, 1800.00);
+
+INSERT INTO funcionarios(nome, cargo, salario_atual, salario_anterior) VALUES ('Benedito Pedro', 'Auxiliar', 1000.00, 980.00);

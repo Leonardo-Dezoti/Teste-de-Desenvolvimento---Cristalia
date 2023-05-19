@@ -1,0 +1,39 @@
+CREATE TABLE cargo(
+    Codigo int PRIMARY KEY,
+    Descricao varchar(100)
+);
+
+INSERT INTO cargo(Codigo, Descricao) VALUES(1, 'Jardineiro');
+INSERT INTO cargo(Codigo, Descricao) VALUES(2, 'Operador de Produção');
+INSERT INTO cargo(Codigo, Descricao) VALUES(3, 'Analista Fiscal');
+INSERT INTO cargo(Codigo, Descricao) VALUES(4, 'Auxiliar de escritorio');
+INSERT INTO cargo(Codigo, Descricao) VALUES(5, 'Mecanico');
+INSERT INTO cargo(Codigo, Descricao) VALUES(6, 'Analista de Sistemas');
+INSERT INTO cargo(Codigo, Descricao) VALUES(7, 'Gerente');
+INSERT INTO cargo(Codigo, Descricao) VALUES(8, 'Diretor');
+INSERT INTO cargo(Codigo, Descricao) VALUES(9, 'Porteiro');
+INSERT INTO cargo(Codigo, Descricao) VALUES(10, 'Analista de RH');
+
+CREATE TABLE func(
+    Empresa int,
+    RE int PRIMARY KEY,
+    Nome varchar(100),
+    Cargo int,
+    Status varchar(1),
+    FOREIGN KEY fk_car(Cargo) REFERENCES cargo(Codigo)
+);
+
+
+INSERT INTO func(Empresa, RE, Nome, Cargo, Status) VALUES (1, 1245, 'Maria da Silva', 6, 'A');
+INSERT INTO func(Empresa, RE, Nome, Cargo, Status) VALUES (1, 584, 'Benedito Costa', 10, 'A');
+INSERT INTO func(Empresa, RE, Nome, Cargo, Status) VALUES (2, 847, 'Joaquim Barbosa', 3, 'A');
+INSERT INTO func(Empresa, RE, Nome, Cargo, Status) VALUES (1, 54, 'Antonio Pereira', 7, 'D');
+INSERT INTO func(Empresa, RE, Nome, Cargo, Status) VALUES (1, 84, 'Joao Gomes', 9, 'A');
+INSERT INTO func(Empresa, RE, Nome, Cargo, Status) VALUES (2, 658, 'Luis Montanha', 7, 'A');
+INSERT INTO func(Empresa, RE, Nome, Cargo, Status) VALUES (1, 841, 'Isabel Silva', 9, 'D');
+
+
+SELECT * FROM Func;
+SELECT * FROM Cargo;
+
+SELECT f.nome AS Nome_Funcionario, descricao AS Cargo_Funcionario FROM Func f JOIN Cargo c ON f.Cargo = c.Codigo WHERE f.Status LIKE 'A' AND f.Empresa = 1 ORDER BY f.nome;
